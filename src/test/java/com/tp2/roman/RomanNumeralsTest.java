@@ -5,26 +5,75 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RomanNumeralsTest {
 
-    // TODO: Replace these lines with your tests
+    RomanNumerals converter = new RomanNumerals();
+
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    void TestUno(){
+        assertEquals("I", converter.convert(1));
     }
 
-//    Missing tests:
-//
-//- Convert 1 to "I"
-//- Convert 5 to "V"
-//- Convert 10 to "X"
-//- Convert 4 to "IV" (subtraction case)
-//- Convert 9 to "IX" (subtraction case)
-//- Convert 40 to "XL"
-//- Convert 50 to "L"
-//- Convert 90 to "XC"
-//- Convert 100 to "C"
-//- Convert 400 to "CD"
-//- Convert 500 to "D"
-//- Convert 900 to "CM"
-//- Convert 1000 to "M"
-//- Convert complex numbers like 1994 to "MCMXCIV"
+    @Test
+    void TestCinco(){
+        assertEquals("V", converter.convert(5));
+    }
+
+    @Test
+    void TestDiez(){
+        assertEquals("X", converter.convert(10));
+    }
+
+    @Test
+    void TestCuatro(){
+        assertEquals("IV", converter.convert(4));
+    }
+
+    @Test
+    void TestNueve(){
+        assertEquals("IX", converter.convert(9));
+    }
+
+    @Test
+    void TestCuarenta(){
+        assertEquals("XL", converter.convert(40));
+    }
+
+    @Test
+    void TestCincuenta(){
+        assertEquals("L", converter.convert(50));
+    }
+
+    @Test
+    void TestNoventa(){
+        assertEquals("XC", converter.convert(90));
+    }
+
+    @Test
+    void TestCien(){
+        assertEquals("C", converter.convert(100));
+    }
+
+    @Test
+    void Test400(){
+        assertEquals("CD", converter.convert(400));
+    }
+
+    @Test
+    void Test500(){
+        assertEquals("D", converter.convert(500));
+    }
+
+    @Test
+    void Test900(){
+        assertEquals("CM", converter.convert(900));
+    }
+
+    @Test
+    void Test1000(){
+        assertEquals("M", converter.convert(1000));
+    }
+
+    @Test
+    void Complex(){
+        assertEquals("MCMXCIV", converter.convert(1994));
+    }
 }

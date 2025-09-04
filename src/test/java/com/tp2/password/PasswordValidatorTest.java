@@ -1,25 +1,63 @@
 package com.tp2.password;
 
 import org.junit.jupiter.api.Test;
+
+import static com.tp2.password.PasswordValidator.isValid;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-class PasswordValidatorTest {
-
-    // TODO: Replace these lines with your tests
+public class PasswordValidatorTest {
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+
+    public void testPasswordLargoMenor(){
+
+        assertEquals(true, isValid("abcDE4%6zhlS"));
+    }
+
+    @Test
+    public void testLargoMinimo(){
+
+
+        assertEquals(false, isValid("abcDEl%ozhlS"));
+
+    }
+    @Test
+
+    public void testSinMayusculas(){
+
+        assertEquals(false, isValid("abcde4%6zhls"));
+
+    }
+    @Test
+
+    public void testSinMinusculas() {
+
+        assertEquals(false, isValid("ABCDE4%6ZHLS"));
+    }
+
+    @Test
+
+    public void testSinNumero(){
+
+        assertEquals(false, isValid("abcDEl%pzhlS"));
+    }
+
+    @Test
+
+    public void testSinSimbolo(){
+
+
+        assertEquals(false, isValid("abcDE4k6zhlS"));
+
+    }
+    @Test
+
+    public void testPasswordValidaConCaracterExtra(){
+
+        assertEquals(true, isValid("abcDE4%6zhlSßß"));
     }
 
 //    Missing tests:
-//
-//- Password with less than 8 characters should be invalid
-//- Password with 8 or more characters should pass length validation
-//- Password without uppercase letter should be invalid
-//- Password without lowercase letter should be invalid
-//- Password without number should be invalid
-//- Password without special character should be invalid
-//- Password meeting all criteria should be valid
+
 }
