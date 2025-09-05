@@ -7,30 +7,32 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class StringCalculatorTest {
 
     // TODO: Replace these lines with your tests
+    StringCalculator calc = new StringCalculator();
     @Test
     void emptyString() {
 
-        assertEquals(0, "");
+        assertEquals(0, calc.add(""));
     }
 
     @Test
     void SingleNumber() {
-        assertEquals(1, "1");
+        assertEquals(1, calc.add("1"));
     }
 
     @Test
     void TwoNumbers() {
-        assertEquals(3, "1,2");
+        assertEquals(3, calc.add("1,2"));
     }
 
     @Test
     void MultipleNumbers() {
-        assertEquals(6, "1,2,3");
+        assertEquals(6, calc.add("1,2,3"));
     }
 
     @Test
     void NewLine() {
-        assertEquals(6, "1/n2,3");
+        StringCalculator calc = new StringCalculator();
+        assertEquals(6, calc.add("1/n2,3"));
 
     }
 
